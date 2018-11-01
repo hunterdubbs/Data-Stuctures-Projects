@@ -67,14 +67,14 @@ public class Main extends Application {
     }
 
     private static void generateMazeParams(){
-        mazeWidth = (int) ((Math.random() * 3 + 1) * 10);
+        mazeWidth = (((int) Math.floor(Math.random() * 3) + 1) * 15);
         cellSize = overallMazeWidth / mazeWidth;
         mazeHeight = overallMazeHeight / cellSize;
     }
 
     public static void buildScene(){
         //start with an empty maze
-        infoArea = new HBox(25, resultText, generateButton);
+        infoArea = new HBox(25, generateButton, resultText);
         infoArea.setLayoutX(mazeWidth * cellSize / 2 + margin - 100);
         infoArea.setLayoutY(mazeHeight * cellSize + margin + 10);
         root = new Group();
